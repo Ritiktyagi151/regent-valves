@@ -55,11 +55,11 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   return (
     <div>
       <header className="border-b border-line bg-white">
-        <div className="container-x flex h-[72px] items-center justify-between">
+        <div className="container-x flex min-h-[72px] flex-wrap items-center justify-between gap-3 py-3">
           <Link href="/" aria-label="Back to website">
             <Logo />
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <a href="/admin/export" className="btn btn-outline !py-2.5">
               Export CSV
             </a>
@@ -71,7 +71,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
       </header>
 
       <div className="container-x py-10">
-        <h1 className="font-display text-4xl font-extrabold uppercase text-navy">Quote requests</h1>
+        <h1 className="font-display text-[clamp(2rem,8vw,2.5rem)] font-extrabold uppercase leading-none text-navy">Quote requests</h1>
         <p className="mt-1 text-steel">Enquiries submitted through the website, newest first.</p>
 
         <div className="mt-8 flex flex-wrap gap-2">

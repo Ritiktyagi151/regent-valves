@@ -23,7 +23,7 @@ export function PageHero({ eyebrow, title, children, image, crumbs }: {
           {crumbs.map((c) => <span key={c.label} className="flex items-center gap-2"><span className="text-signal">/</span>{c.href ? <Link href={c.href} className="hover:text-white">{c.label}</Link> : <span className="text-white">{c.label}</span>}</span>)}
         </nav>}
         <p className="eyebrow eyebrow-light">{eyebrow}</p>
-        <h1 className="mt-5 max-w-[900px] font-display text-[clamp(3.4rem,6.7vw,6.3rem)] font-semibold leading-[.9] tracking-[-.045em]">{title}</h1>
+        <h1 className="mt-5 max-w-[900px] font-display text-[clamp(2.75rem,10vw,6.3rem)] font-semibold leading-[.92] tracking-[-.045em]">{title}</h1>
         {children && <div className="mt-7 max-w-xl border-l-2 border-signal pl-5 text-[16px] leading-[1.7] text-white/75">{children}</div>}
       </div>
     </section>
@@ -49,12 +49,12 @@ export function SectionHead({ eyebrow, title, children, light = false, center = 
 export function FaqList({ items }: { items: { q: string; a: string }[]; light?: boolean }) {
   return (
     <div className="border-t border-line">
-      {items.map((item, i) => <details key={item.q} className="group border-b border-line" open={i === 0}>
+      {items.map((item, i) => <details key={item.q} name="faq" className="group border-b border-line" open={i === 0}>
         <summary className="flex cursor-pointer items-center justify-between gap-6 py-5 text-left font-display text-[20px] font-semibold leading-tight text-ink transition hover:text-brand md:py-6 md:text-[25px]">
           {item.q}
           <span className="faq-plus grid h-8 w-8 shrink-0 place-items-center border border-line text-[22px] font-light leading-none text-signal transition-transform">+</span>
         </summary>
-        <p className="max-w-2xl pb-6 text-[15px] leading-[1.75] text-steel">{item.a}</p>
+        <div className="faq-answer"><div className="faq-answer-inner"><p className="max-w-2xl pb-6 text-[15px] leading-[1.75] text-steel">{item.a}</p></div></div>
       </details>)}
     </div>
   );
@@ -62,27 +62,27 @@ export function FaqList({ items }: { items: { q: string; a: string }[]; light?: 
 
 export function QuoteBand({ defaultProduct, source = "quote-band" }: { defaultProduct?: string; source?: string }) {
   return (
-    <section id="quote" className="relative overflow-hidden bg-ink py-20 text-white lg:py-28">
+    <section id="quote" className="relative overflow-hidden bg-ink py-8 text-white sm:py-12 lg:py-14">
       <div className="absolute right-0 top-0 h-full w-[46%] bg-[#192c3f] opacity-50" />
-      <div className="container-x relative grid items-start gap-12 lg:grid-cols-[.84fr_1.16fr] lg:gap-20">
+      <div className="container-x relative grid items-start gap-6 lg:grid-cols-[.84fr_1.16fr] lg:gap-10">
         <Reveal className="lg:sticky lg:top-32">
           <p className="eyebrow eyebrow-light">Start a conversation</p>
-          <h2 className="h-section mt-6 text-white">Your process.<br />Our priority<span className="text-signal">.</span></h2>
+          <h2 className="mt-4 font-display text-[clamp(2.5rem,4vw,3.8rem)] font-semibold leading-[.95] tracking-[-.045em] text-white">Your process.<br />Our priority<span className="text-signal">.</span></h2>
           <p className="mt-7 max-w-md text-[16px] leading-[1.75] text-white/65">Tell us what you need to control — media, pressure, temperature, size and quantity. We&apos;ll help find the right valve for the job.</p>
-          <div className="my-9 h-px w-full max-w-md bg-white/20" />
-          <div className="space-y-5 text-sm">
+          <div className="my-6 h-px w-full max-w-md bg-white/20" />
+          <div className="space-y-2.5 text-sm">
             <a href={`tel:${SITE.phones[0].href}`} className="flex items-center gap-4 text-white/85 hover:text-white"><span className="grid h-10 w-10 place-items-center border border-white/25 text-xl text-signal"><Phone /></span>{SITE.phones[0].label}</a>
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-4 text-white/85 hover:text-white"><span className="grid h-10 w-10 place-items-center border border-white/25 text-xl text-signal"><Mail /></span>{SITE.email}</a>
+          <a href={`mailto:${SITE.email}`} className="flex min-w-0 items-center gap-4 text-white/85 hover:text-white"><span className="grid h-10 w-10 shrink-0 place-items-center border border-white/25 text-xl text-signal"><Mail /></span><span className="break-all">{SITE.email}</span></a>
             <a href={SITE.mapLink} target="_blank" rel="noreferrer" className="flex items-center gap-4 text-white/85 hover:text-white"><span className="grid h-10 w-10 shrink-0 place-items-center border border-white/25 text-xl text-signal"><Pin /></span><span>{SITE.address.line1}<br />{SITE.address.line2}</span></a>
           </div>
           <p className="mt-10 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[.15em] text-white/45"><Check className="text-signal" /> Custom engineered · Hydrostatically tested · Export ready</p>
         </Reveal>
         <Reveal delay={90}>
-          <div className="mb-5 flex items-center justify-between gap-4 border-b border-white/20 pb-5">
-            <div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-white/50">Enquiry form / 01</p><h3 className="mt-2 font-display text-3xl font-semibold">Request a quotation</h3></div>
+          <div className="mb-4 flex items-center justify-between gap-4 border-b border-white/20 pb-4">
+            <div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-white/50">Enquiry form / 01</p><h3 className="mt-1 font-display text-2xl font-semibold sm:text-3xl">Request a quotation</h3></div>
             <ArrowUpRight className="hidden text-3xl text-signal sm:block" />
           </div>
-          <EnquiryForm dark defaultProduct={defaultProduct} source={source} />
+          <EnquiryForm compact dark defaultProduct={defaultProduct} source={source} />
         </Reveal>
       </div>
     </section>

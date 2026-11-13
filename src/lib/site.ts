@@ -27,10 +27,11 @@ export function yearsOfExperience() {
 }
 
 export const NAV = [
+  { href: "/about", label: "About" },
   { href: "/products", label: "Products", mega: true },
   { href: "/industries", label: "Industries" },
   { href: "/manufacturing", label: "Manufacturing" },
-  { href: "/about", label: "About" },
+  { href: "/career", label: "Careers" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];

@@ -48,14 +48,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       {/* Hero */}
       <section className="overflow-hidden bg-ink text-white">
         <div className="container-x grid items-stretch gap-0 lg:grid-cols-[1.1fr_.9fr]">
-          <div className="flex min-h-[460px] flex-col justify-center py-14 pr-8 lg:min-h-[560px] lg:py-20 lg:pr-16">
+          <div className="flex min-h-[400px] flex-col justify-center py-12 sm:min-h-[460px] sm:py-14 sm:pr-8 lg:min-h-[560px] lg:py-20 lg:pr-16">
             <nav aria-label="Breadcrumb" className="mb-9 flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[.18em] text-white/50">
               <Link href="/" className="hover:text-white">Home</Link> <span className="text-signal">/</span>
               <Link href="/products" className="hover:text-white">Products</Link> <span className="text-signal">/</span>
               <span className="text-white">{c.name}</span>
             </nav>
             <p className="eyebrow eyebrow-light">{c.tagline}</p>
-            <h1 className="mt-6 max-w-[780px] font-display text-[clamp(3.4rem,5.8vw,6rem)] font-semibold leading-[.9] tracking-[-.04em]">{c.name}<span className="text-signal">.</span></h1>
+            <h1 className="mt-6 max-w-[780px] font-display text-[clamp(2.75rem,9vw,6rem)] font-semibold leading-[.92] tracking-[-.04em]">{c.name}<span className="text-signal">.</span></h1>
             <p className="mt-7 max-w-xl border-l-2 border-signal pl-5 text-[16px] leading-[1.75] text-white/70">{c.intro}</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link href={`/contact?product=${encodeURIComponent(items[0].name)}`} className="btn btn-primary">Request a quote <ArrowRight /></Link>

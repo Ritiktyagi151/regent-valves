@@ -89,7 +89,7 @@ export default function ManufacturingStory() {
             <p className="eyebrow eyebrow-light">04 / How we make it</p>
             <div key={active} className="process-copy mt-8 md:mt-12">
               <span className="font-mono text-xs uppercase tracking-widest text-signal">Stage {STAGES[active].number} — {STAGES[active].label}</span>
-              <h2 className="mt-5 max-w-[580px] font-display text-[clamp(3.4rem,5.4vw,6.4rem)] font-semibold leading-[.9] tracking-[-.045em]">{STAGES[active].title}</h2>
+              <h2 className="mt-5 max-w-[580px] font-display text-[clamp(2.75rem,9vw,6.4rem)] font-semibold leading-[.92] tracking-[-.045em]">{STAGES[active].title}</h2>
               <p className="mt-6 max-w-md text-[15px] leading-[1.7] text-white/65">{STAGES[active].text}</p>
             </div>
           </div>

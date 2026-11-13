@@ -42,7 +42,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
       Icon: Mail,
       title: "Email",
       body: (
-        <a href={`mailto:${SITE.email}`} className="hover:text-brand">
+        <a href={`mailto:${SITE.email}`} className="break-all hover:text-brand">
           {SITE.email}
         </a>
       ),

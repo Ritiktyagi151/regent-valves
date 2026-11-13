@@ -8,7 +8,7 @@ export default function Reveal({
   className = "",
   as: Tag = "div",
   variant = "up",
-  repeatOnExit = false,
+  repeatOnExit = true,
 }: {
   children: ReactNode;
   delay?: number;

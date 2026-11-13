@@ -30,11 +30,13 @@ export default function EnquiryForm({
   defaultIndustry = "",
   source = "website",
   dark = false,
+  compact = false,
 }: {
   defaultProduct?: string;
   defaultIndustry?: string;
   source?: string;
   dark?: boolean;
+  compact?: boolean;
 }) {
   const [state, action, pending] = useActionState(submitEnquiry, initial);
   const v = state.values ?? {};
@@ -59,7 +61,7 @@ export default function EnquiryForm({
   }
 
   return (
-    <form action={action} className={`p-6 sm:p-8 lg:p-10 ${dark ? "bg-white text-ink" : "border border-line bg-white"}`} noValidate>
+    <form action={action} className={`${compact ? "enquiry-compact p-3 sm:p-4 lg:p-5" : "p-6 sm:p-8 lg:p-10"} ${dark ? "bg-white text-ink" : "border border-line bg-white"}`} noValidate>
       <input type="hidden" name="source" value={source} />
       {/* Honeypot */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
@@ -69,7 +71,7 @@ export default function EnquiryForm({
         </label>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={`grid sm:grid-cols-2 ${compact ? "gap-3" : "gap-4"}`}>
         <Field label="Full name" required error={e.name}>
           <input className="field" name="name" autoComplete="name" defaultValue={v.name} aria-invalid={!!e.name} />
         </Field>
@@ -115,10 +117,10 @@ export default function EnquiryForm({
         </Field>
       </div>
 
-      <div className="mt-4">
+      <div className={compact ? "mt-3" : "mt-4"}>
         <Field label="Requirement details" required error={e.message}>
           <textarea
-            className="field min-h-[120px] resize-y"
+            className={`field resize-y ${compact ? "min-h-[72px]" : "min-h-[120px]"}`}
             name="message"
             defaultValue={v.message}
             placeholder="Media, pressure class, temperature, actuation, standards, delivery timeline…"
@@ -133,7 +135,7 @@ export default function EnquiryForm({
         </p>
       )}
 
-      <button type="submit" disabled={pending} className="btn btn-primary mt-6 w-full !py-3.5 disabled:opacity-60">
+      <button type="submit" disabled={pending} className={`btn btn-primary w-full disabled:opacity-60 ${compact ? "mt-4 !py-3" : "mt-6 !py-3.5"}`}>
         {pending ? "Sending…" : "Send enquiry"} {!pending && <ArrowRight />}
       </button>
       <p className="mt-3 text-center text-xs text-steel">Your details are only used to respond to your enquiry.</p>

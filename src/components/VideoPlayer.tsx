@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { Play } from "./Icons";
 
-export default function VideoPlayer({ src, poster, title }: { src: string; poster: string; title: string }) {
+export default function VideoPlayer({ src, poster, title, autoPlay = false }: { src: string; poster: string; title: string; autoPlay?: boolean }) {
   const [playing, setPlaying] = useState(false);
   const ref = useRef<HTMLVideoElement | null>(null);
 
@@ -12,6 +12,17 @@ export default function VideoPlayer({ src, poster, title }: { src: string; poste
     setPlaying(true);
     requestAnimationFrame(() => ref.current?.play().catch(() => undefined));
   };
+
+  if (autoPlay) {
+    return (
+      <div className="relative aspect-video overflow-hidden rounded-2xl bg-ink shadow-2xl shadow-ink/40 ring-1 ring-white/10">
+        <video className="h-full w-full object-cover" controls autoPlay muted loop playsInline preload="auto" poster={poster} aria-label={title}>
+          <source src={src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
+  }
 
   return (
     <div className="relative aspect-video overflow-hidden rounded-2xl bg-ink shadow-2xl shadow-ink/40 ring-1 ring-white/10">

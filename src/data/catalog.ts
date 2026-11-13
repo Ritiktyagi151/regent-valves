@@ -142,7 +142,7 @@ export const CATEGORIES: Category[] = [
     name: "Knife Gate Valves",
     short: "Slurry, pulp & powder isolation",
     tagline: "Our founding product — still our flagship.",
-    image: img("1735043243"),
+    image: "/img/products/category/knife-gate-valves.webp",
     intro:
       "Regent began in 1999 as a knife gate valve manufacturer. Today we build nine knife gate families for slurries, pulp stock, ash, powders and sludge — wherever conventional valves clog or fail.",
     how:

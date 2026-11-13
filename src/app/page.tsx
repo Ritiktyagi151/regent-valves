@@ -9,6 +9,7 @@ import Reveal from "@/components/Reveal";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProductShowcase from "@/components/ProductShowcase";
 import ManufacturingStory from "@/components/ManufacturingStory";
+import ReelSection from "@/components/ReelSection";
 
 const clients = [
   { name: "NTPC", src: "/img/clients/NTPC.png" },
@@ -28,7 +29,7 @@ export default function HomePage() {
     <>
       {/* Homepage banners paused while the landing hero uses the company video. */}
       {/* <HeroSlider /> */}
-      <section className="relative isolate flex min-h-[620px] items-center overflow-hidden bg-ink text-white md:min-h-[720px] lg:min-h-[min(850px,calc(100svh-108px))]">
+      <section className="relative isolate flex min-h-[min(620px,78svh)] items-center overflow-hidden bg-ink text-white md:min-h-[720px] lg:min-h-[min(850px,calc(100svh-108px))]">
         <video className="absolute inset-0 -z-10 h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
           <source src={SITE.videoSrc} type="video/mp4" />
         </video>
@@ -44,10 +45,10 @@ export default function HomePage() {
             { n: 80, suffix: "+", label: "Team members" },
             { n: 20, suffix: "+", label: "Export countries" },
           ].map((s, i) => (
-            <div key={s.label} className={`border-r border-white/10 px-5 py-8 last:border-r-0 md:px-8 md:py-10 ${i < 2 ? "border-b md:border-b-0" : ""}`}>
-              <p className="font-display text-[clamp(2.8rem,4vw,4.7rem)] font-semibold leading-none tracking-tight"><CountUp to={s.n} suffix={s.suffix} /></p>
+            <Reveal key={s.label} delay={i * 60} className={`border-r border-white/10 px-3 py-6 last:border-r-0 sm:px-5 sm:py-8 md:px-8 md:py-10 ${i < 2 ? "border-b md:border-b-0" : ""}`}>
+              <p className="font-display text-[clamp(2.2rem,4vw,4.7rem)] font-semibold leading-none tracking-tight"><CountUp to={s.n} suffix={s.suffix} /></p>
               <p className="mt-2 text-[10px] font-bold uppercase tracking-[.19em] text-white/50">{s.label}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -55,18 +56,19 @@ export default function HomePage() {
       {/* CUSTOMER MARKS */}
       <section className="border-b border-line bg-white py-8 md:py-11">
         <div className="container-x">
-          <p className="mb-6 text-center text-[10px] font-extrabold uppercase tracking-[.22em] text-steel">The companies who put our valves to work</p>
+          <Reveal><p className="mb-6 text-center text-[10px] font-extrabold uppercase tracking-[.22em] text-steel">The companies who put our valves to work</p></Reveal>
           <div className="grid grid-cols-3 items-center gap-x-5 gap-y-8 md:grid-cols-6 md:gap-x-10">
-            {clients.map((c) => (
-              <div key={c.name} className="relative mx-auto h-12 w-full max-w-[155px] opacity-100 transition duration-300">
-                <Image src={c.src} alt={c.name} fill sizes="155px" className="object-contain" />
-              </div>
+            {clients.map((c, i) => (
+              <Reveal key={c.name} delay={i * 50} className="relative mx-auto h-16 w-full max-w-[180px] opacity-100 transition duration-300 sm:h-12 sm:max-w-[155px]">
+                <Image src={c.src} alt={c.name} fill sizes="(min-width:640px) 155px, 180px" className="object-contain" />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <ProductShowcase />
+      <Reveal><ProductShowcase /></Reveal>
+      <Reveal><ReelSection /></Reveal>
 
       {/* THE REGENT STORY — place, craft, and proof */}
       <section id="our-story" className="relative overflow-hidden bg-[#f8f7f3] py-20 md:py-28 lg:py-36">
@@ -94,7 +96,7 @@ export default function HomePage() {
             <div className="max-w-[610px] lg:py-5">
               <Reveal variant="up" delay={100}>
                 <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[.17em] text-signal"><span className="h-px w-7 bg-signal" /> A company built on engineering</p>
-                <h2 className="mt-6 font-display text-[clamp(2.75rem,4.4vw,5rem)] font-semibold leading-[.95] tracking-[-.052em] text-ink">Rooted here.<br /><span className="whitespace-nowrap text-[.72em] font-light italic text-steel sm:text-[.82em]">Trusted everywhere.</span></h2>
+                <h2 className="mt-6 font-display text-[clamp(2.75rem,4.4vw,5rem)] font-semibold leading-[.95] tracking-[-.052em] text-ink">Rooted here.<br /><span className="text-[.72em] font-light italic text-steel sm:whitespace-nowrap sm:text-[.82em]">Trusted everywhere.</span></h2>
               </Reveal>
               <Reveal delay={180}>
                 <p className="mt-9 max-w-[550px] border-l-2 border-signal pl-5 text-[17px] leading-[1.8] text-ink/85">Since 1999, we&apos;ve turned complex flow-control challenges into valves built to work in the real world.</p>
@@ -154,7 +156,7 @@ export default function HomePage() {
             <Reveal className="flex flex-col justify-between">
               <div>
                 <p className="eyebrow">05 / Proven quality</p>
-                <h2 className="mt-6 font-display text-[clamp(2rem,4vw,4rem)] font-semibold leading-[.95] tracking-[-.052em] text-ink"><span className="whitespace-nowrap">Trust is <span className="font-light italic text-steel">earned.</span></span><br />Then tested.</h2>
+                <h2 className="mt-6 font-display text-[clamp(2rem,4vw,4rem)] font-semibold leading-[.95] tracking-[-.052em] text-ink"><span className="sm:whitespace-nowrap">Trust is <span className="font-light italic text-steel">earned.</span></span><br />Then tested.</h2>
                 <p className="mt-8 max-w-md text-[16px] leading-[1.8] text-steel">A promise is easy to make. We prefer the evidence: verified materials, calibrated instruments, documented inspections and a pressure test for every valve.</p>
                 <Link href="/manufacturing" className="group mt-9 inline-flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[.16em] text-signal">Explore quality &amp; certifications <ArrowUpRight className="text-xl transition group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
               </div>
@@ -176,13 +178,15 @@ export default function HomePage() {
       </section>
 
       {/* VIDEO + HUMAN TOUCH */}
-      <section className="bg-mist py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-mist py-14 md:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/img/about/regent4.webp')" }} />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-mist/80" />
         <div className="container-x grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-20">
-          <Reveal variant="scale"><VideoPlayer src={SITE.videoSrc} poster="" title="Regent Hitech company film" /></Reveal>
+          <Reveal variant="scale"><VideoPlayer src={SITE.videoSrc} poster="/img/about/regent2.webp" title="Regent Hitech company film" autoPlay /></Reveal>
           <Reveal delay={80}>
             <p className="eyebrow">People behind the product</p>
             <h2 className="h-section mt-5 text-ink">Engineering is a team sport.</h2>
-            <p className="mt-6 text-[16px] leading-[1.75] text-steel">Our engineers, machinists, technicians and quality specialists bring decades of combined experience to every valve. Under the leadership of Managing Director Mr. Sanjay Mishra, many of our people have grown with Regent for years.</p>
+            <p className="mt-5 max-w-xl text-[15px] leading-[1.7] text-steel">Our engineers and production team bring hands-on experience to every valve. Many have grown with Regent over the years.</p>
             <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[.16em] text-signal transition hover:gap-4">Meet the Regent team <ArrowUpRight className="text-xl" /></Link>
           </Reveal>
         </div>
@@ -191,8 +195,8 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="py-20 md:py-24">
         <div className="container-x grid gap-10 lg:grid-cols-[.65fr_1.35fr] lg:gap-20">
-          <div><p className="eyebrow">The essentials</p><h2 className="h-section mt-5 text-ink">Good questions.<br />Straight answers.</h2><p className="mt-6 text-sm leading-relaxed text-steel">Need something more specific? Our engineering team is ready to discuss your duty conditions.</p></div>
-          <FaqList items={HOME_FAQ.slice(0, 5)} />
+          <Reveal><div><p className="eyebrow">The essentials</p><h2 className="mt-5 font-display text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-[1.02] tracking-[-.04em] text-ink">Frequently asked<br /><span className="font-light italic text-signal">questions.</span></h2><p className="mt-5 text-sm leading-relaxed text-steel">Need help with a specific application? Talk to our engineering team.</p></div></Reveal>
+          <Reveal><FaqList items={HOME_FAQ.slice(0, 5)} /></Reveal>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { PRODUCT_MENU_COLUMNS } from "@/data/catalog";
 import { NAV, SITE } from "@/lib/site";
-import { ArrowRight, Chevron, Close, Mail, Menu, Phone } from "./Icons";
+import { ArrowRight, Chevron, Close, Mail, Menu, Phone, Search } from "./Icons";
 import Logo from "./Logo";
 import EnquiryForm from "./EnquiryForm";
 
@@ -17,6 +17,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
   const [mobileProducts, setMobileProducts] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     let frame = 0;
@@ -114,11 +115,19 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <button type="button" onClick={() => setSearchOpen((value) => !value)} className="grid h-11 w-11 place-items-center border border-line text-xl text-navy transition hover:border-signal hover:text-signal" aria-label={searchOpen ? "Close product search" : "Open product search"} aria-expanded={searchOpen}><Search /></button>
             <button type="button" onClick={() => setQuoteOpen(true)} className="btn btn-primary hidden !px-5 !py-3 sm:inline-flex">Request a quote <ArrowRight /></button>
             <button type="button" className="grid h-11 w-11 place-items-center border border-line text-2xl text-navy xl:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? <Close /> : <Menu />}</button>
           </div>
         </div>
       </div>
+      {searchOpen && <div className="absolute inset-x-0 top-full z-50 border-b border-line bg-white p-4 shadow-xl sm:p-6">
+        <form action="/products" method="GET" role="search" className="container-x flex items-center gap-3">
+          <Search className="shrink-0 text-xl text-signal" />
+          <input autoFocus type="search" name="q" placeholder="Search valves and products..." aria-label="Search products" className="field min-w-0 flex-1" />
+          <button type="submit" className="btn btn-primary !px-5 !py-3">Search <ArrowRight /></button>
+        </form>
+      </div>}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[2px]" aria-hidden="true">
         <div ref={progressRef} className="h-full origin-left bg-signal" />
       </div>

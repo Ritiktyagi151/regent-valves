@@ -21,7 +21,7 @@ export default function FloatingContact() {
   if (pathname.startsWith("/admin")) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
+    <div className="fixed bottom-8 right-5 z-[60] flex flex-col items-end gap-3">
       {open && <div className="fixed inset-0 z-50 grid items-end justify-center bg-ink/60 p-0 backdrop-blur-sm sm:items-center sm:p-5" onMouseDown={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
         <section role="dialog" aria-modal="true" aria-labelledby="floating-enquiry-title" className="max-h-[92dvh] w-full max-w-2xl overflow-y-auto rounded-t-2xl bg-white shadow-2xl sm:rounded-2xl">
           <div className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-white px-5 py-4 sm:px-7">
