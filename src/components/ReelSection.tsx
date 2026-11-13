@@ -42,7 +42,7 @@ export default function ReelSection() {
           {reels.map((reel, index) => (
             <Link key={reel.title} href="/gallery" className="group relative aspect-[9/16] overflow-hidden rounded-sm bg-navy ring-1 ring-white/10" aria-label={`View ${reel.title}`}>
               {reel.video ? (
-                <video ref={videoRef} className="absolute inset-0 h-full w-full object-cover" muted loop playsInline preload="none" poster={reel.image} aria-label={reel.title}>
+                <video ref={videoRef} className="absolute inset-0 h-full w-full object-contain sm:object-cover" muted loop playsInline preload="none" poster={reel.image} aria-label={reel.title}>
                   <source src={SITE.videoSrc} type="video/mp4" />
                 </video>
               ) : (

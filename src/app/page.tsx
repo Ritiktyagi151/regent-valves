@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* Homepage banners paused while the landing hero uses the company video. */}
       {/* <HeroSlider /> */}
       <section className="relative isolate flex min-h-[min(620px,78svh)] items-center overflow-hidden bg-ink text-white md:min-h-[720px] lg:min-h-[min(850px,calc(100svh-108px))]">
-        <video className="absolute inset-0 -z-10 h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+        <video className="absolute inset-0 -z-10 h-full w-full object-contain object-center" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
           <source src={SITE.videoSrc} type="video/mp4" />
         </video>
         <div className="absolute inset-0 z-0 bg-black/20" aria-hidden="true" />
@@ -67,11 +67,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* HOMEPAGE ABOUT INTRO */}
+      <section className="bg-[#f8f7f3] py-16 md:py-24">
+        <div className="container-x">
+          <div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+            <Reveal variant="scale" className="relative min-h-[320px] overflow-hidden bg-ink sm:min-h-[430px]">
+              <Image src="/img/about/regent3.webp" alt="Regent Hitech engineers machining industrial valve components" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" aria-hidden="true" />
+              <span className="absolute bottom-5 left-5 border-l-2 border-signal pl-3 text-[10px] font-bold uppercase tracking-[.16em] text-white">Engineered and tested in Noida, India</span>
+            </Reveal>
+            <div className="max-w-[650px]">
+              <Reveal>
+                <p className="eyebrow">About Regent Hitech</p>
+                <h2 className="mt-5 font-display text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[.96] tracking-[-.05em] text-ink">Built on experience.<br /><span className="whitespace-nowrap text-[clamp(1.2rem,3.4vw,3.2rem)] font-light italic text-steel">Made to keep industry moving.</span></h2>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="mt-7 max-w-xl text-[16px] leading-[1.8] text-steel">Since 1999, Regent Hitech has engineered and manufactured industrial valves for demanding process applications. From design and machining to assembly and pressure testing, our team brings the work together under one roof.</p>
+              </Reveal>
+              <Reveal delay={170} className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-ink/15 pt-6">
+                <div><span className="block font-display text-3xl font-semibold text-ink">100<span className="text-signal">+</span></span><span className="mt-1 block text-[10px] font-bold uppercase tracking-[.15em] text-steel">Engineered products</span></div>
+                <div><span className="block font-display text-3xl font-semibold text-ink">20<span className="text-signal">+</span></span><span className="mt-1 block text-[10px] font-bold uppercase tracking-[.15em] text-steel">Export countries</span></div>
+                <Link href="/about" className="group inline-flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[.16em] text-ink transition hover:text-signal">Get to know Regent <ArrowUpRight className="text-xl transition group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Reveal><ProductShowcase /></Reveal>
       <Reveal><ReelSection /></Reveal>
 
       {/* THE REGENT STORY — place, craft, and proof */}
-      <section id="our-story" className="relative overflow-hidden bg-[#f8f7f3] py-20 md:py-28 lg:py-36">
+      <section id="our-story" className="relative overflow-hidden bg-[#f8f7f3] pb-20 pt-8 md:pb-28 md:pt-12 lg:pb-36 lg:pt-16">
         <div className="container-x relative">
           <div className="mb-9 flex items-center justify-between gap-6 border-t border-ink/20 pt-5 md:mb-14">
             <p className="eyebrow">02 / The Regent story</p>
@@ -160,7 +187,7 @@ export default function HomePage() {
                 <p className="mt-8 max-w-md text-[16px] leading-[1.8] text-steel">A promise is easy to make. We prefer the evidence: verified materials, calibrated instruments, documented inspections and a pressure test for every valve.</p>
                 <Link href="/manufacturing" className="group mt-9 inline-flex items-center gap-3 text-[11px] font-extrabold uppercase tracking-[.16em] text-signal">Explore quality &amp; certifications <ArrowUpRight className="text-xl transition group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
               </div>
-              <div className="mt-12 flex items-baseline gap-4 border-t border-ink/20 pt-6"><span className="font-display text-[clamp(5rem,10vw,10rem)] font-semibold leading-none tracking-[-.07em] text-ink">100<span className="text-signal">%</span></span><span className="max-w-[130px] text-[11px] font-bold uppercase leading-relaxed tracking-[.13em] text-steel">Hydrostatically tested before dispatch</span></div>
+              <div className="mt-12 flex items-baseline gap-4 border-t border-ink/20 pt-6"><span className="font-display text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-none tracking-[-.07em] text-ink">100<span className="text-signal">%</span></span><span className="max-w-[130px] text-[11px] font-bold uppercase leading-relaxed tracking-[.13em] text-steel">Hydrostatically tested before dispatch</span></div>
             </Reveal>
             <Reveal variant="scale" delay={100} className="relative min-h-[520px] pb-16 sm:pr-20 md:min-h-[660px]">
               <div className="editorial-image relative h-full min-h-[460px] overflow-hidden bg-ink md:min-h-[600px]"><Image src="/img/about/regent1.webp" alt="Hydrostatic pressure testing at Regent Hitech" fill sizes="(min-width:1024px) 700px, 100vw" className="object-cover" /><span className="absolute bottom-5 left-5 border-l-2 border-signal pl-3 text-[10px] font-bold uppercase tracking-[.16em] text-white">Every valve. Every time.</span></div>
