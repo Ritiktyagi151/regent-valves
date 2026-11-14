@@ -10,6 +10,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import ProductShowcase from "@/components/ProductShowcase";
 import ManufacturingStory from "@/components/ManufacturingStory";
 import ReelSection from "@/components/ReelSection";
+import ClientMarkets from "@/components/ClientMarkets";
 
 const clients = [
   { name: "NTPC", src: "/img/clients/NTPC.png" },
@@ -226,6 +227,8 @@ export default function HomePage() {
           <Reveal><FaqList items={HOME_FAQ.slice(0, 5)} /></Reveal>
         </div>
       </section>
+
+      <ClientMarkets />
 
       <QuoteBand source="home" />
     </>
