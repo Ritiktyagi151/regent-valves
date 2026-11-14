@@ -29,8 +29,8 @@ export default function HomePage() {
     <>
       {/* Homepage banners paused while the landing hero uses the company video. */}
       {/* <HeroSlider /> */}
-      <section className="relative isolate flex min-h-[min(620px,78svh)] items-center overflow-hidden bg-ink text-white md:min-h-[720px] lg:min-h-[min(850px,calc(100svh-108px))]">
-        <video className="absolute inset-0 -z-10 h-full w-full object-contain object-center" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+      <section className="relative isolate flex h-[min(56.25vw,320px)] min-h-[200px] items-center overflow-hidden bg-ink text-white md:h-auto md:min-h-[720px] lg:min-h-[min(850px,calc(100svh-108px))]">
+        <video className="absolute inset-0 -z-10 h-full w-full object-contain object-center md:object-cover" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
           <source src={SITE.videoSrc} type="video/mp4" />
         </video>
         <div className="absolute inset-0 z-0 bg-black/20" aria-hidden="true" />

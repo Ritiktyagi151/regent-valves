@@ -7,23 +7,26 @@ import { SITE } from "@/lib/site";
 import { ArrowUpRight } from "./Icons";
 
 const reels = [
-  { title: "On the shop floor", image: "/img/about/regent2.webp", video: true },
-  { title: "Precision machining", image: "/img/about/regent3.webp" },
-  { title: "Quality testing", image: "/img/about/regent1.webp" },
-  { title: "Our people", image: "/img/about/team-member.webp" },
+  { title: "On the shop floor", image: "/img/about/regent2.webp", video: "/videos/reels/video1.mp4" },
+  { title: "Precision machining", image: "/img/about/regent3.webp", video: "/videos/reels/viedo2.mp4" },
+  { title: "Quality testing", image: "/img/about/regent1.webp", video: "/videos/reels/video3.mp4" },
+  { title: "Our people", image: "/img/about/team-member.webp", video: "/videos/reels/video4.mp4" },
 ];
 
 export default function ReelSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const reelsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) video.play().catch(() => undefined);
-      else video.pause();
+    const videos = reelsRef.current?.querySelectorAll("video[data-reel-video]");
+    if (!videos?.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) video.play().catch(() => undefined);
+        else video.pause();
+      });
     }, { threshold: 0.35 });
-    observer.observe(video);
+    videos.forEach((video) => observer.observe(video));
     return () => observer.disconnect();
   }, []);
 
@@ -38,12 +41,12 @@ export default function ReelSection() {
           <div><p className="eyebrow eyebrow-light">Inside Regent</p><h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Reels from the shop floor.</h2></div>
           <Link href={SITE.social.youtube} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-1 pb-1 text-[10px] font-extrabold uppercase tracking-[.14em] text-white/70 transition hover:text-signal">More <ArrowUpRight /></Link>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        <div ref={reelsRef} className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {reels.map((reel, index) => (
             <Link key={reel.title} href="/gallery" className="group relative aspect-[9/16] overflow-hidden rounded-sm bg-navy ring-1 ring-white/10" aria-label={`View ${reel.title}`}>
               {reel.video ? (
-                <video ref={videoRef} className="absolute inset-0 h-full w-full object-contain sm:object-cover" muted loop playsInline preload="none" poster={reel.image} aria-label={reel.title}>
-                  <source src={SITE.videoSrc} type="video/mp4" />
+                <video data-reel-video className="absolute inset-0 h-full w-full object-contain sm:object-cover" muted loop playsInline preload="none" poster={reel.image} aria-label={reel.title}>
+                  <source src={reel.video} type="video/mp4" />
                 </video>
               ) : (
                 <Image src={reel.image} alt={reel.title} fill sizes="(min-width:640px) 25vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" />
