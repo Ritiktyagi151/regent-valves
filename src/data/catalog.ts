@@ -289,7 +289,7 @@ export const CATEGORIES: Category[] = [
     name: "Check Valves",
     short: "Swing, wafer, dual-plate & non-slam",
     tagline: "Automatic backflow protection, no operator needed.",
-    image: img("1735549059"),
+    image: "/img/products/category/check-valves.png",
     intro:
       "A complete non-return range: swing check, wafer, dual-plate, non-slam disc and forged-steel lift check valves to protect pumps and pipelines from reverse flow.",
     how:
@@ -318,7 +318,7 @@ export const CATEGORIES: Category[] = [
     name: "Industrial Control Valves",
     short: "Pneumatic modulating valves",
     tagline: "Accurate process control, delivered with the right actuator.",
-    image: img("1735551057"),
+    image: "/img/products/category/industrial-control-valves.png",
     intro:
       "Butterfly, ball, V-notch ball and two-way globe control valves with pneumatic actuators and positioners — engineered for precise modulation across process industries.",
     how:
@@ -347,7 +347,7 @@ export const CATEGORIES: Category[] = [
     name: "Specialty & Process Valves",
     short: "Steam, IBR, safety, strainers & more",
     tagline: "The supporting cast every plant depends on.",
-    image: img("1735552604"),
+    image: "/img/products/category/apecialty-process-valves..png",
     intro:
       "Beyond our core ranges, Regent manufactures steam valves, IBR-certified boiler valves, pop-type safety valves, piston valves, needle valves, Y strainers and pulp valves.",
     how:
