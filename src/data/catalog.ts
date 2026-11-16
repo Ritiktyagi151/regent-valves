@@ -172,7 +172,7 @@ export const CATEGORIES: Category[] = [
     name: "Butterfly Valves",
     short: "Compact quarter-turn isolation & control",
     tagline: "Light, compact, and built for rugged plant duty.",
-    image: img("1735216254"),
+    image: "/img/products/category/butterfly-valves.png",
     intro:
       "From resilient-seated wafer valves for water services to PFA-lined bodies for aggressive chemicals and high-performance offset designs, our butterfly range covers general isolation through to demanding process duty.",
     how:
@@ -202,7 +202,7 @@ export const CATEGORIES: Category[] = [
     name: "Ball Valves",
     short: "Tight shut-off, 1-piece to 3-piece",
     tagline: "Bubble-tight isolation with low operating torque.",
-    image: img("1735218003"),
+    image: "/img/products/category/ball-valves.png",
     intro:
       "Our ball valves span economical one-piece units, serviceable three-piece flanged designs, PFA-lined versions for corrosive media and compact forged-steel valves for high-pressure small-bore lines.",
     how:
@@ -231,7 +231,7 @@ export const CATEGORIES: Category[] = [
     name: "Gate Valves",
     short: "Full-bore isolation, flanged & forged",
     tagline: "Straight-through flow for dependable isolation.",
-    image: img("1735289179"),
+    image: "/img/products/category/gate-valves.png",
     intro:
       "Our gate valves cover ASME Class 150/300 flanged valves, high-pressure forged-steel valves up to 2500#, and cast-iron sluice gate valves for water and wastewater systems.",
     how:
@@ -260,7 +260,7 @@ export const CATEGORIES: Category[] = [
     name: "Globe Valves",
     short: "Throttling & regulation, ASA / DIN / forged",
     tagline: "Precise throttling, positive shut-off.",
-    image: img("1735548023"),
+    image: "/img/products/category/globe-valves..png",
     intro:
       "Regent globe valves are available in ASA and DIN patterns plus forged-steel designs up to 2500# — suited to throttling, regulation and steam duty.",
     how:

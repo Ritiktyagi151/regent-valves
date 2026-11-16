@@ -116,7 +116,7 @@ export default function HomePage() {
                 <span className="absolute bottom-7 left-6 font-mono text-[10px] uppercase tracking-[.2em] text-white/80 sm:left-8">Inside the Regent workshop</span>
               </div>
               <div className="story-inset absolute bottom-0 right-0 w-[45%] border-[6px] border-[#f8f7f3] bg-ink p-1.5 sm:w-[47%] sm:border-[9px] sm:p-2">
-                <div className="relative aspect-[4/3] overflow-hidden"><Image src="/img/about/regent1.webp" alt="Hydrostatic pressure testing of a Regent industrial valve" fill sizes="(min-width:1024px) 300px, 45vw" className="object-cover" /></div>
+                <div className="relative aspect-[4/3] overflow-hidden"><Image src="/img/about/regent1-new.png" alt="Hydrostatic pressure testing of a Regent industrial valve" fill sizes="(min-width:1024px) 300px, 45vw" className="object-cover" /></div>
                 <p className="px-2 pb-1 pt-3 font-mono text-[9px] uppercase tracking-[.15em] text-white/70 sm:text-[10px]">02 / Pressure tested</p>
               </div>
             </Reveal>
