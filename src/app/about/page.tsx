@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const years = yearsOfExperience();
   return (
-    <>
+    <div className="about-page">
       <PageHero eyebrow="About us" title={<>Welcome to <span className="text-signal">Regent Hitech</span></>} crumbs={[{ label: "About" }]} image="/img/about/team-member.webp">
         {years} years of precision valve manufacturing — a proudly Indian enterprise at the heart of the country&apos;s engineering hub.
       </PageHero>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <div className="flex flex-col justify-between gap-5 border-t border-ink/20 pt-6 sm:flex-row sm:items-end">
               <div>
                 <p className="eyebrow">Our journey</p>
-                <h2 className="mt-4 font-display text-[clamp(3rem,6vw,5.5rem)] font-semibold leading-[.9] tracking-[-.055em] text-ink">Milestones<span className="text-signal">.</span></h2>
+                <h2 className="milestones-heading mt-4 font-display text-[clamp(3rem,6vw,5.5rem)] font-semibold leading-[.9] tracking-[-.055em] text-ink">Milestones<span className="text-signal">.</span></h2>
               </div>
               <p className="max-w-sm pb-1 text-sm leading-relaxed text-steel">From a focused start in Noida to flow-control solutions trusted across industries.</p>
             </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
       {/* Industries */}
       <section className="py-16 lg:py-20">
         <div className="container-x">
-          <h2 className="font-display text-3xl font-extrabold uppercase text-navy">Industries we serve</h2>
+          <h2 className="industries-heading font-display text-3xl font-extrabold uppercase text-navy">Industries we serve</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {INDUSTRIES.map((i) => (
               <p key={i.slug} className="flex items-center gap-2.5 rounded-xl bg-mist px-4 py-3 font-semibold text-navy">
@@ -176,6 +176,6 @@ export default function AboutPage() {
       </section>
 
       <CtaStrip title="Let's build your next flow-control project" text="Talk to the engineers who design, machine and test every Regent valve." />
-    </>
+    </div>
   );
 }

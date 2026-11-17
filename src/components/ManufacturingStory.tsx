@@ -12,7 +12,7 @@ const STAGES = [
     title: "A better beginning.",
     label: "Material selection",
     text: "It starts before the first cut. We source from approved suppliers and inspect incoming castings, forgings and components against the job specification.",
-    image: "/img/about/regent3.webp",
+    image: "/img/manufacturing-story/a-better-beginning.png",
     alt: "Regent Hitech machining facility",
   },
   {
@@ -20,7 +20,7 @@ const STAGES = [
     title: "Made with intent.",
     label: "Precision machining",
     text: "Bodies, bonnets, seats and spindles are machined to tight tolerances and measured throughout production — not just at the end.",
-    image: "/img/about/regent2.webp",
+    image: "/img/manufacturing-story/made-with-intent.jpeg",
     alt: "Precision machining a Regent valve component",
   },
   {
@@ -28,7 +28,7 @@ const STAGES = [
     title: "Built to belong.",
     label: "Assembly & fitting",
     text: "Skilled technicians fit each component with care, using controlled processes to keep every part aligned, interchangeable and ready for service.",
-    image: "/img/about/regent4.webp",
+    image: "/img/manufacturing-story/built-to-belong.png",
     alt: "Regent technicians assembling industrial valves",
   },
   {
@@ -36,7 +36,7 @@ const STAGES = [
     title: "Confidence, tested.",
     label: "Quality assurance",
     text: "Every assembled valve faces hydrostatic pressure testing and final inspection before it earns the Regent name and leaves our Noida facility.",
-    image: "/img/about/regent1.webp",
+    image: "/img/manufacturing-story/confidence-tested.png",
     alt: "Hydrostatic pressure testing at Regent Hitech",
   },
 ] as const;
