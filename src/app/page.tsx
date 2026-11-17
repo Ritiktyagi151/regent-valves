@@ -73,7 +73,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
             <Reveal variant="scale" className="relative min-h-[320px] overflow-hidden bg-ink sm:min-h-[430px]">
-              <Image src="/img/about/regent3.webp" alt="Regent Hitech engineers machining industrial valve components" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
+              <Image src="/img/about/regent-hitech-valve-showroom.png" alt="Regent Hitech engineers machining industrial valve components" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" aria-hidden="true" />
               <span className="absolute bottom-5 left-5 border-l-2 border-signal pl-3 text-[10px] font-bold uppercase tracking-[.16em] text-white">Engineered and tested in Noida, India</span>
             </Reveal>
