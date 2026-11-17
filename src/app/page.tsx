@@ -210,7 +210,7 @@ export default function HomePage() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/img/about/regent4.webp')" }} />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-mist/80" />
         <div className="container-x grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr] lg:gap-20">
-          <Reveal variant="scale"><VideoPlayer src={SITE.videoSrc} poster="/img/about/regent2.webp" title="Regent Hitech company film" autoPlay /></Reveal>
+          <Reveal variant="scale"><VideoPlayer src="/videos/reels/regent-video.mp4" poster="/img/about/regent1.webp" title="Regent Hitech company video" autoPlay /></Reveal>
           <Reveal delay={80}>
             <p className="eyebrow">People behind the product</p>
             <h2 className="h-section mt-5 text-ink">Engineering is a team sport.</h2>

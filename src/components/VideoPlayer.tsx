@@ -16,7 +16,7 @@ export default function VideoPlayer({ src, poster, title, autoPlay = false }: { 
   if (autoPlay) {
     return (
       <div className="relative aspect-video overflow-hidden rounded-2xl bg-ink shadow-2xl shadow-ink/40 ring-1 ring-white/10">
-        <video className="h-full w-full object-cover" controls autoPlay muted loop playsInline preload="auto" poster={poster} aria-label={title}>
+        <video className="h-full w-full object-fill" controls autoPlay muted loop playsInline preload="auto" poster={poster} aria-label={title}>
           <source src={src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

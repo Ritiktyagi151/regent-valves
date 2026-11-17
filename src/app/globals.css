@@ -113,10 +113,10 @@
 .enquiry-compact label > span:first-child { margin-bottom: .25rem; font-size: .72rem; }
 
 /* Keep About page headings more compact across its hero and sections. */
-.about-page .h-section { font-size: clamp(2rem, 4vw, 3.5rem); }
-.about-page h1 { font-size: clamp(2.3rem, 7vw, 4.8rem); }
-.about-page .milestones-heading { font-size: clamp(2.5rem, 4.5vw, 4rem); }
-.about-page .industries-heading { font-size: 1.65rem; }
+.about-page .h-section { font-size: clamp(1.75rem, 3vw, 2.8rem); }
+.about-page h1 { font-size: clamp(2rem, 5.5vw, 3.8rem); }
+.about-page .milestones-heading { font-size: clamp(2.2rem, 3.5vw, 3.2rem); }
+.about-page .industries-heading { font-size: 1.4rem; }
 
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
